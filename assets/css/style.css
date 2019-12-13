@@ -1,0 +1,27 @@
+body{
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+    background:  transparent url(../../assets/images/herringbone.png);
+    background-repeat: repeat-x repeat-y;
+    
+}
+.container{
+    background:#ffffff;
+}
+
+h1{
+   background:#4aaaa5;   
+   text-align:center;
+}
+h2{
+    text-align:center;
+    color:blueviolet;
+    text-shadow: 2px 2px #ff0000;
+}
+.theme h2{
+  position:absolute;
+  top: 20%;
+  left:30%
+}
+h3{
+    color:peachpuff
+}
