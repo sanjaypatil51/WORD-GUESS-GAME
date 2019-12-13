@@ -1,7 +1,6 @@
 body{
-    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-    background:  transparent url(../../assets/images/herringbone.png);
-    background-repeat: repeat-x repeat-y;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;   
+    
     
 }
 .container{
@@ -24,4 +23,9 @@ h2{
 }
 h3{
     color:peachpuff
+}
+
+#guess-word-string{
+    text-align: center;
+    color:blue
 }
