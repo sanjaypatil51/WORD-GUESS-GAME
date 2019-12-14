@@ -1,8 +1,8 @@
 
 
-var songsList = ["AllThat", "InspectorGadget", "FamilyMatters", "FullHouse", "Rugrats", "TheMagicSchoolBus", "BoyMeetsWorld",
-    "SavedByTheBell", "Recess", "Animaniacs", "TheFreshPrinceofBelAir", "SisterSister", "ThePowerpuffGirls",
-    "Arthur", "HeyArnold", "DawsonCreek", "DexterLaboratory", "Pokemon", "Friends", "Blossom", "SailorMoon", "AngryBeavers",
+var songsList = ["AllThat", "InspectorGadget", "FamilyMatters", "FullHouse", "Rugrats", "BoyMeetsWorld",
+    "SavedByTheBell", "Recess", "Animaniacs",  "SisterSister", "Arthur", "HeyArnold", "DawsonCreek",  "Pokemon", 
+    "Friends", "Blossom", "SailorMoon", "AngryBeavers",
     "Doug", "SmartGuy", "TheXFiles"];
 
 var answerArray = []
@@ -52,9 +52,9 @@ function setResult() {
     }
     else if (result == null && numGuess == 0) {
         var newDiv = document.createElement("p")
-        newDivP.textContent = "You Lost"
-        newDivP.setAttribute("id", "result-set");
-        document.getElementById("result").appendChild(newDivP);
+        newDiv.textContent = "You Lost, correct word is:"+ word+". Try agian by pressing Rest Button"        
+        newDiv.setAttribute("id", "result-set");
+        document.getElementById("result").appendChild(newDiv);
         result = "Lost"
 
     }
@@ -88,6 +88,7 @@ function checkGuess(character) {
             wordGuessed.push(character)
             --numGuess
             document.getElementById("remain-guess").textContent = numGuess
+
         }
     }
 

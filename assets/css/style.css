@@ -30,18 +30,18 @@ h3{
     color: blue;
     border-bottom: 5px solid blue;
     margin: 0 10px;
-    font-size: 35px;
+    font-size: 20px;
     padding: 10px;
     transition: .5s;
     text-transform: uppercase;
     text-align: center;
 }
 
-#guess-word{
+#guess-word, #letter-guessed{
     text-align: center;
 }
 #remain-guess, #result-set{
     color:blue;
-    font-size:35px;
+    font-size:20px;
     text-align:center;
 }
