@@ -40,8 +40,8 @@ h3{
 #guess-word{
     text-align: center;
 }
-#remain-guess{
+#remain-guess, #result-set{
     color:blue;
-    font-size:50px;
+    font-size:35px;
     text-align:center;
 }

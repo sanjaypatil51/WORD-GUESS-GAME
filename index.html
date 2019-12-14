@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" class="h-100">
 
-<head >
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -12,12 +12,12 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 
-    
+
 
 
 </head>
-<div class="container">
-    <div class="row">
+<div class="container h-100">
+    <div class="row h-25">
         <div class="jumbotran">
             <div class="col-md-12">
                 <h1 class="text-center">Hangman</h1>
@@ -27,7 +27,9 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-6">
+    </div>
+    <div class="row">
+        <div class="col-md-4">
             <h3 class="text-center">Video</h3>
             <div class="embed-responsive embed-responsive-16by9">
                 <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/BSDg2oSazNc" frameborder="0"
@@ -35,16 +37,20 @@
                     allowfullscreen></iframe>
             </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-8">
             <div class="game">
                 <h3 class="text-center">Press Any key to start</h3>
-                <p class="text-center">Guess Below Word, no spaces and special character</p>
+                <h4 class="text-center">Guess Below Word, no spaces and special character</h4>
                 <ul id="guess-word"></ul>
-                <p class="text-center" id="number-guess">Number Of Guesses Remaining</p>
-                <p class="text-center" id="number-guess">Letter Guessed</p>
+                <h4 class="text-center" id="number-guess">Number Of Guesses Remaining</h4>
+                <h4 class="text-center">Letter Guessed</h4>
                 <ul id="letter-guessed"></ul>
+                <h4 class="text-center" id="result">Result</h4>
             </div>
 
+        </div>
+        <div class="col-md-12">
+            <button type="button" id="rest-btn" class="btn btn-primary btn-lg btn-block">Reset</button>
         </div>
     </div>
 </div>
@@ -52,5 +58,6 @@
 <body>
 
 </body>
-<script  src="assets/javascript/game.js"></script>
+<script src="assets/javascript/game.js"></script>
+
 </html>

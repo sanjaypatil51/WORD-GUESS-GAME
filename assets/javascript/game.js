@@ -6,16 +6,17 @@ var songsList = ["AllThat", "InspectorGadget", "FamilyMatters", "FullHouse", "Ru
     "Doug", "SmartGuy", "TheXFiles"];
 
 var answerArray = []
-var numgGuess = 0
+var numGuess = 0
 var word = ""
 var wordGuessed = []
 var correctWordGuessed = []
+var result = null
 
 function setWord() {
     word = songsList[Math.floor(Math.random() * songsList.length)];
     console.log(word)
     //var answerList=""
-    numgGuess = word.length + 3;
+    numGuess = word.length+3;
     var newDiv = ""
     var list = document.getElementById("guess-word")
 
@@ -27,7 +28,7 @@ function setWord() {
     list.innerHTML = newDiv;
 
     var newDivP = document.createElement("p");
-    newDivP.textContent = numgGuess
+    newDivP.textContent = numGuess
     newDivP.setAttribute("id", "remain-guess");
     document.getElementById("number-guess").appendChild(newDivP);
     //newDiv.textContent=answerList
@@ -35,22 +36,49 @@ function setWord() {
     //document.getElementById("guess-word").appendChild(newDiv);
 }
 
+function setResult() {
+
+    if (result == null && correctWordGuessed.length == answerArray.length) {
+        numGuess = 0
+        document.getElementById("remain-guess").textContent = numGuess
+        var newDiv = document.createElement("p")
+        newDiv.textContent = "You Won"
+        newDiv.setAttribute("id", "result-set");
+        document.getElementById("result").appendChild(newDiv);
+        result = "Won"
+        console.log(numGuess);
+
+
+    }
+    else if (result == null && numGuess == 0) {
+        var newDiv = document.createElement("p")
+        newDivP.textContent = "You Lost"
+        newDivP.setAttribute("id", "result-set");
+        document.getElementById("result").appendChild(newDivP);
+        result = "Lost"
+
+    }
+}
+
 function checkGuess(character) {
-    if (!wordGuessed.includes(character) && !correctWordGuessed.includes(character)) {
-        //alert("in top loop")
-        if (answerArray.includes(character)) {
+    console.log("test: "+numGuess)
+    if (numGuess !== 0) {
+        //alert("in top loop")        
+        if (answerArray.includes(character) && !correctWordGuessed.includes(character)) {
             //alert("in if loop")
             for (i = 0; i < answerArray.length; i++) {
                 if (answerArray[i] == character) {
-                    --numgGuess
+                    --numGuess
                     document.getElementById("data-pos" + i).textContent = character
                     correctWordGuessed.push(character)
-                    document.getElementById("remain-guess").textContent = numgGuess
+                    document.getElementById("remain-guess").textContent = numGuess
 
                 }
             }
+
+
         }
-        else {
+        else if (!correctWordGuessed.includes(character) && !wordGuessed.includes(character)) {
             //alert("in else loop")
             var newDiv = document.createElement("li")
             newDiv.setAttribute("class", "letter")
@@ -58,24 +86,61 @@ function checkGuess(character) {
             var list = document.getElementById("letter-guessed")
             list.appendChild(newDiv)
             wordGuessed.push(character)
-            --numgGuess
-            document.getElementById("remain-guess").textContent = numgGuess
+            --numGuess
+            document.getElementById("remain-guess").textContent = numGuess
         }
+    }
+
+    
+
+}
+
+
+
+function deleteChild(elementId) {
+
+    myNode = document.getElementById(elementId);
+    //alert(myNode.firstChild)
+    while (myNode.childNodes.length >1) {
+        myNode.removeChild(myNode.lastChild);
     }
 }
 
-setWord();
+
 
 document.onkeyup = function (event) {
     //alert(event.which)
     //alert(event.key)
     var character = event.key.toUpperCase()
+    //alert(character)
     if (/[a-zA-Z]/i.test(character) && character.length == 1) {
         //alert("char typed")
         checkGuess(character)
+        setResult()
 
     }
+    else {
+        alert("You Enter " + character + ". Only Charcater Allowed")
+    }
+
 
 }
 
 
+document.getElementById("rest-btn").onclick = function () {
+    answerArray = []
+    numGuess = 0
+    word = ""
+    wordGuessed = []
+    correctWordGuessed = []
+    result = null
+    deleteChild("guess-word");
+    deleteChild("number-guess")
+    deleteChild("letter-guessed")
+    deleteChild("result")
+    setWord()
+
+
+
+};
+setWord();
