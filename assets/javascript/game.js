@@ -5,20 +5,22 @@ var songsList = ["AllThat", "InspectorGadget", "FamilyMatters", "FullHouse", "Ru
     "Arthur", "HeyArnold", "DawsonCreek", "DexterLaboratory", "Pokemon", "Friends", "Blossom", "SailorMoon", "AngryBeavers",
     "Doug", "SmartGuy", "TheXFiles"];
 
-var answerArray = [];
-var numgGuess = 0;
+var answerArray = []
+var numgGuess = 0
 var word = ""
+var wordGuessed = []
+var correctWordGuessed = []
 
 function setWord() {
     word = songsList[Math.floor(Math.random() * songsList.length)];
-
+    console.log(word)
     //var answerList=""
-    numgGuess = word.length * 2;
+    numgGuess = word.length + 3;
     var newDiv = ""
     var list = document.getElementById("guess-word")
 
     for (var i = 0; i < word.length; i++) {
-        answerArray[i] = word[i];
+        answerArray[i] = word[i].toUpperCase();
         newDiv = newDiv + "<li id=data-pos" + i + " class=letter></li>"
     }
     //console.log(newDiv)
@@ -33,24 +35,47 @@ function setWord() {
     //document.getElementById("guess-word").appendChild(newDiv);
 }
 
-function checkGuess(){
+function checkGuess(character) {
+    if (!wordGuessed.includes(character) && !correctWordGuessed.includes(character)) {
+        //alert("in top loop")
+        if (answerArray.includes(character)) {
+            //alert("in if loop")
+            for (i = 0; i < answerArray.length; i++) {
+                if (answerArray[i] == character) {
+                    --numgGuess
+                    document.getElementById("data-pos" + i).textContent = character
+                    correctWordGuessed.push(character)
+                    document.getElementById("remain-guess").textContent = numgGuess
 
-    
+                }
+            }
+        }
+        else {
+            //alert("in else loop")
+            var newDiv = document.createElement("li")
+            newDiv.setAttribute("class", "letter")
+            newDiv.textContent = character
+            var list = document.getElementById("letter-guessed")
+            list.appendChild(newDiv)
+            wordGuessed.push(character)
+            --numgGuess
+            document.getElementById("remain-guess").textContent = numgGuess
+        }
+    }
 }
 
 setWord();
 
 document.onkeyup = function (event) {
-    alert(event.which)
-    alert(event.key)
-    var char=event.key
-
-    if (/[a-zA-Z]/i.test(char) && char.length==1){
-        alert("char typed")
-
+    //alert(event.which)
+    //alert(event.key)
+    var character = event.key.toUpperCase()
+    if (/[a-zA-Z]/i.test(character) && character.length == 1) {
+        //alert("char typed")
+        checkGuess(character)
 
     }
-    
+
 }
 
 

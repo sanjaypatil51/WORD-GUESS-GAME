@@ -27,10 +27,10 @@ h3{
 
 .letter {
     display: inline-block;
-    color: transparent;
+    color: blue;
     border-bottom: 5px solid blue;
     margin: 0 10px;
-    font-size: 50px;
+    font-size: 35px;
     padding: 10px;
     transition: .5s;
     text-transform: uppercase;
