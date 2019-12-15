@@ -7,7 +7,7 @@ body{
     background:#ffffff;
 }
 
-h1{
+h1, .score{
    background:#4aaaa5;   
    text-align:center;
 }
@@ -19,7 +19,7 @@ h2{
 .theme h2{
   position:absolute;
   top: 20%;
-  left:30%;
+  left:10%;
   animation-name: fadein, move;
   animation-fill-mode: both;
   animation-iteration-count: infinite;
@@ -28,9 +28,10 @@ h2{
   
     
 }
-h3{
+h3,h5{
     color:blue
 }
+
 
 .letter {
     display: inline-block;

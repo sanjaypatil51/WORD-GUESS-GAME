@@ -11,6 +11,8 @@ var word = ""
 var wordGuessed = []
 var correctWordGuessed = []
 var result = null
+var won_score=0
+var lost_score=0
 
 function setWord() {
     word = songsList[Math.floor(Math.random() * songsList.length)];
@@ -45,9 +47,11 @@ function setResult() {
         newDiv.textContent = "You Won"
         newDiv.setAttribute("id", "result-set");
         document.getElementById("result-id").appendChild(newDiv);
-        result = "Won"
-        alert("You Won")
+        result = "Won"       
         //console.log(numGuess);
+        won_score++
+        document.getElementById("won-score").textContent=won_score
+        alert("You Won")
 
 
     }
@@ -56,7 +60,9 @@ function setResult() {
         newDiv.textContent = "You Lost, correct word is:"+ word+". Try agian by pressing Rest Button"        
         newDiv.setAttribute("id", "result-set");
         document.getElementById("result-id").appendChild(newDiv);
-        result = "Lost"
+        result = "Lost"        
+        lost_score++
+        document.getElementById("lost-score").textContent=lost_score
         alert("You Lost, correct word is:"+ word+". Try agian by pressing Rest Button")
 
     }
