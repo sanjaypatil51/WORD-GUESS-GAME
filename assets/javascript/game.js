@@ -92,6 +92,8 @@ function setResult() {
         result = "Lost"        
         lost_score++
         document.getElementById("lost-score").textContent=lost_score
+        v_link=songVideo[word]
+        document.getElementById("embed-video").innerHTML=v_link
         alert("You Lost, correct word is:"+ word+". Try agian by pressing Rest Button")
 
     }
