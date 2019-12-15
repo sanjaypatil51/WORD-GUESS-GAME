@@ -13,13 +13,20 @@ h1{
 }
 h2{
     text-align:center;
-    color:blueviolet;
-    text-shadow: 2px 2px #ff0000;
+    color:rgb(226, 43, 43);
+    text-shadow: 2px 2px #a6ff009f;
 }
 .theme h2{
   position:absolute;
   top: 20%;
-  left:30%
+  left:30%;
+  animation-name: fadein, move;
+  animation-fill-mode: both;
+  animation-iteration-count: infinite;
+  animation-duration: 5s;
+  animation-direction: alternate;
+  
+    
 }
 h3{
     color:blue
@@ -45,3 +52,19 @@ h3{
     font-size:20px;
     text-align:center;
 }
+
+@keyframes fadein {
+    0%,50% {
+        opacity: 0.5;
+  }
+      100%{
+        opacity: 1;
+    }
+}
+@keyframes move{
+0%{
+    transform: translateY(80px); 
+ }
+ 100%{transform: translateY(-80px);
+
+ }}

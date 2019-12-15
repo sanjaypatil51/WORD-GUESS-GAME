@@ -16,17 +16,18 @@
 
 
 </head>
-<div class="container h-100">
+<div class="container text-center">
+
     <div class="row h-25">
-        <div class="jumbotran">
-            <div class="col-md-12">
-                <h1 class="text-center">Hangman</h1>
-                <div class="theme">
-                    <img class="img-fluid" src="./assets/images/theme.png">
-                    <h2>90s Theme Song Guessing Game</h2>
-                </div>
+
+        <div class="col-md-12">
+            <h1 class="text-center">Hangman</h1>
+            <div class="theme">
+                <img class="img-fluid" src="./assets/images/theme.png">
+                <h2>90s Theme Song Guessing Game</h2>
             </div>
         </div>
+
     </div>
     <div class="row">
         <div class="col-md-4">
@@ -43,16 +44,22 @@
                 <h4 class="text-center">Guess Below Word, no spaces and special character</h4>
                 <ul id="guess-word"></ul>
                 <h4 class="text-center" id="number-guess">Number Of Guesses Remaining</h4>
+                <ul id="number-guess-id"></ul>
                 <h4 class="text-center">Letter Guessed</h4>
                 <ul id="letter-guessed"></ul>
                 <h4 class="text-center" id="result">Result</h4>
+                <ul id="result-id"></ul>
             </div>
 
         </div>
+
+    </div>
+    <div class="row">
         <div class="col-md-12">
             <button type="button" id="rest-btn" class="btn btn-primary btn-lg btn-block">Reset</button>
         </div>
     </div>
+
 </div>
 
 <body>
