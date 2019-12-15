@@ -5,6 +5,32 @@ var songsList = ["AllThat", "InspectorGadget", "FamilyMatters", "FullHouse", "Ru
     "Friends", "Blossom", "SailorMoon", "AngryBeavers",
     "Doug", "SmartGuy", "TheXFiles"];
 
+ var songVideo ={
+    AllTha: '<iframe src="https://www.youtube.com/embed/BSDg2oSazNc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+    InspectorGadge: '<iframe src="https://www.youtube.com/embed/e-JHfXVlkik" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+    FamilyMatters:'<iframe src="https://www.youtube.com/embed/kYvNiKwWvhk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+    FullHouse:'<iframe src="https://www.youtube.com/embed/2ZNFaxyKp_Q" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+    Rugrat:'<iframe  src="https://www.youtube.com/embed/1Zch-CGnH9c" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+    BoyMeetsWorl:'<iframe  src="https://www.youtube.com/embed/nOpgKz9y9fA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+    SavedByTheBell:'<iframe src="https://www.youtube.com/embed/rgqPmmmycIg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+    Recess:'<iframe src="https://www.youtube.com/embed/jvRlyA3uUW0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+    Animaniacs:'<iframe  src="https://www.youtube.com/embed/CWnWwN1z_UM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+    SisterSiste:'<iframe src="https://www.youtube.com/embed/T4JcOZJi5JQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+    Arthur:'<iframe src="https://www.youtube.com/embed/7zkX6kfnWbk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+    HeyArnold:'<iframe src="https://www.youtube.com/embed/vUsnJ9jlwns" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+    DawsonCreek:'<iframe  src="https://www.youtube.com/embed/Htv9WDItIgA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+    Pokemon:'<iframe src="https://www.youtube.com/embed/JuYeHPFR3f0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+    Friends:'<iframe  src="https://www.youtube.com/embed/Niu9Zmrx0p8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+    Blossom:'<iframe  src="https://www.youtube.com/embed/Y4l0BS3RPvc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+    SailorMo:'<iframe  src="https://www.youtube.com/embed/X6_RZhh44NY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+    AngryBeavers:'<iframe  src="https://www.youtube.com/embed/geRR7JF-3FI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+    Doug:'<iframe src="https://www.youtube.com/embed/JR5zFiIxqSs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+    SmartGu:'<iframe  src="https://www.youtube.com/embed/sf0goBbPQoo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
+    TheXFiles:'<iframe src="https://www.youtube.com/embed/m7yjRxZIUvQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
+
+
+ }   
+
 var answerArray = []
 var numGuess = 0
 var word = ""
@@ -51,6 +77,9 @@ function setResult() {
         //console.log(numGuess);
         won_score++
         document.getElementById("won-score").textContent=won_score
+        v_link=songVideo[word]
+        document.getElementById("embed-video").innerHTML=v_link
+        console.log(v_link)
         alert("You Won")
 
 
@@ -147,6 +176,7 @@ document.getElementById("rest-btn").onclick = function () {
     deleteChild("number-guess-id")
     deleteChild("letter-guessed")
     deleteChild("result-id")
+    deleteChild("embed-video")
     setWord()
 
 
