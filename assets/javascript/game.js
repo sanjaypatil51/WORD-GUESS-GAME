@@ -2,8 +2,7 @@
 
 var songsList = ["AllThat", "InspectorGadget", "FamilyMatters", "FullHouse", "Rugrats", "BoyMeetsWorld",
     "SavedByTheBell", "Recess", "Animaniacs", "SisterSister", "Arthur", "HeyArnold", "DawsonCreek", "Pokemon",
-    "Friends", "Blossom", "SailorMoon", "AngryBeavers",
-    "Doug", "SmartGuy", "TheXFiles"];
+    "Friends", "Blossom", "SailorMoon", "AngryBeavers","Doug", "SmartGuy", "TheXFiles"];
 
 var songVideo = {
     AllTha: '<iframe src="https://www.youtube.com/embed/BSDg2oSazNc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>',
@@ -160,7 +159,7 @@ document.onkeyup = function (event) {
 
     }
     else {
-        alert("You Enter " + character + ". Only Charcater Allowed")
+        alert("You Enter " + character + ". Only Alphabets Allowed")
     }
 
 
