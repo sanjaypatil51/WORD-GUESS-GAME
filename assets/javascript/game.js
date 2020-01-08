@@ -85,7 +85,7 @@ function setResult() {
     }
     else if (result == null && numGuess == 0) {
         var newDiv = document.createElement("p")
-        newDiv.textContent = "You Lost, correct word is:" + word + ". Try agian by pressing Rest Button"
+        newDiv.textContent = "You Lost, correct word is:" + word + ". Try agian by pressing Reset Button"
         newDiv.setAttribute("id", "result-set");
         document.getElementById("result-id").appendChild(newDiv);
         result = "Lost"
@@ -93,7 +93,7 @@ function setResult() {
         document.getElementById("lost-score").textContent = lost_score
         v_link = songVideo[word]
         document.getElementById("embed-video").innerHTML = v_link
-        alert("You Lost, correct word is:" + word + ". Try agian by pressing Rest Button")
+        alert("You Lost, correct word is:" + word + ". Try agian by pressing Reset Button")
 
     }
 }
